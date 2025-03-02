@@ -15,38 +15,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
             height: 100vh;
             background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
             font-family: "Helvetica Neue", sans-serif;
             text-align: center;
             color: #333;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
         }
 
-        h1, h2 {
-            font-weight: 200;
+        .container {
+            display: flex;
             font-size: 2.5rem;
+            font-weight: 200;
+        }
+
+        .letter {
+            display: inline-block;
             opacity: 0;
             transform: translateY(20px);
+            animation: fadeInUp 1.2s ease-out forwards;
         }
 
-        .hey {
-            animation: fadeUp 1.5s ease-out forwards;
-        }
-
-        .future {
-            animation: fadeUp 1.5s ease-out forwards;
-            animation-delay: 1.2s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeUp {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -59,7 +48,21 @@
     </style>
 </head>
 <body>
-    <h1 class="hey">Hey</h1>
-    <h2 class="future">see you in the future!</h2>
+
+    <div class="container" id="text"></div>
+
+    <script>
+        const text = "Hey, see you in the future!";
+        const container = document.getElementById("text");
+
+        text.split("").forEach((char, index) => {
+            let span = document.createElement("span");
+            span.textContent = char;
+            span.classList.add("letter");
+            span.style.animationDelay = `${index * 0.05}s`;
+            container.appendChild(span);
+        });
+    </script>
+
 </body>
 </html>
