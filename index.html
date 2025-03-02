@@ -1,82 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-            font-family: "Helvetica Neue", sans-serif;
-            color: #333;
-            overflow: hidden;
-        }
-
-        .container {
-            display: flex;
-            font-size: 2.5rem;
-            font-weight: 200;
-            position: relative;
-        }
-
-        .hey {
-            font-weight: 300;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
-            opacity: 0;
-        }
-
-        .future {
-            display: flex;
-            opacity: 0;
-            position: relative;
-        }
-
-        .letter {
-            display: inline-block;
-            opacity: 0;
-        }
-    </style>
-</head>
+<html>
 <body>
-
-    <div class="container">
-        <span class="hey" id="hey">Hey</span>
-        <span class="future" id="text"></span>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const text = " see you in the future!";
-            const textContainer = document.getElementById("text");
-
-            text.split("").forEach((char, index) => {
-                let span = document.createElement("span");
-                span.textContent = char;
-                span.classList.add("letter");
-                textContainer.appendChild(span);
-            });
-
-            gsap.timeline()
-                .to("#hey", { opacity: 1, duration: 1, ease: "power2.out" })
-                .to("#hey", { x: "-50%", duration: 1, delay: 0.5, ease: "power2.out" })
-                .to(".future", { opacity: 1, duration: 0.5 }, "-=0.5")
-                .to(".letter", { opacity: 1, y: 0, stagger: 0.05, duration: 0.8, ease: "power2.out" });
-        });
-    </script>
-
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
 </body>
+  <body style="
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    ">
+      <h1 style="
+          font-family: helvetica-light;
+          font-weight: 100;
+      ">Hey, see you in the future!</h1>
+  </body>
 </html>
